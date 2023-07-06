@@ -1,0 +1,2 @@
+device: /dev/sdz1
+directory: /mnt/target
