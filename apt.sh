@@ -19,7 +19,7 @@ sudo apt update
 sudo apt upgrade --yes
 
 # Install packages
-sudo apt install --install-recommends --yes ${packages}
+sudo apt install --install-recommends --yes ${packages} $@
 
 # Read packages to be removed
 file=${this}/config/apt-remove

@@ -16,4 +16,4 @@ sudo mkdir --parents "${target}/scripts"
 sudo cp --preserve=mode --recursive ${this}/* "${target}/scripts/"
 
 # Change system root and execute the setup
-sudo chroot "${target}" "/scripts/setup.sh"
+sudo chroot "${target}" "/scripts/setup.sh" $@

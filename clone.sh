@@ -18,7 +18,7 @@ ${this}/mount.sh
 # Copy everything from source to target
 sudo rsync --archive --no-D --acls --hard-links --xattrs ${from}/* ${to} \
 	--exclude home --exclude dev --exclude proc --exclude sys --exclude tmp \
-	--exclude run --exclude mnt --exclude media
+	--exclude run --exclude mnt --exclude media $@
 
 # Now make changes to the system in chroot
 ${this}/chroot.sh

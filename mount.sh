@@ -15,7 +15,7 @@ directory=`echo "${config}" | grep --ignore-case 'directory' | awk '{print $2}'`
 # Mount target filesystem
 mount | grep "${directory}" &> /dev/null || \
 	sudo mount --rw --options defaults,noatime \
-		--source ${device} --target ${directory}
+		--source ${device} --target ${directory} $@
 
 sudo mkdir --parents ${directory}/{dev,proc,run,sys,tmp}
 

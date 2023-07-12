@@ -17,7 +17,7 @@ mirror=`echo "${config}" | grep --ignore-case 'mirror' | awk '{print $2}'`
 ${this}/mount.sh
 
 # Start bootstrapping
-sudo debootstrap --merged-usr --keep-debootstrap-dir \
+sudo debootstrap --merged-usr --keep-debootstrap-dir $@ \
 	"${suite}" "${target}" "${mirror}"
 
 # Now make changes to the system in chroot
