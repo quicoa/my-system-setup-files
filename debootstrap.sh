@@ -21,4 +21,4 @@ sudo debootstrap --merged-usr --keep-debootstrap-dir $@ \
 	"${suite}" "${target}" "${mirror}"
 
 # Now make changes to the system in chroot
-${this}/chroot.sh
+${this}/chroot.sh setup

@@ -3,6 +3,7 @@
 set -e
 
 this=`dirname $0`
+script="$1"
 
 # Read configuration
 file=${this}/config/chroot
@@ -10,6 +11,9 @@ config=`cat "${file}"`
 
 # Read config parameters
 target=`echo "${config}" | grep --ignore-case 'target' | awk '{print $2}'`
+
+# Do not continue if target script is not provided
+test "${script}" || sh -c 'echo "Please provide a script name to run" && false'
 
 # Copy scripts and configuration to target filesystem
 sudo mkdir --parents "${target}/scripts"
@@ -27,4 +31,4 @@ for i in dev dev/pts dev/shm proc run sys tmp; do
 done
 
 # Change system root and execute the setup
-sudo chroot "${target}" "/scripts/setup.sh" $@
+sudo chroot "${target}" "/scripts/${script}.sh" $@
