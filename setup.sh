@@ -40,5 +40,6 @@ done
 dir="/etc/tmpfiles.d"
 file="${dir}/user-cache.conf"
 sudo mkdir --parents "${dir}"
-cat "${file}" | grep "${user}" &> /dev/null || \
-	sudo sh "echo -c 'd /tmp/${user}-cache 0755 ${user} ${user} - -' >> '${file}'"
+test -f "${file}" && \
+	cat "${file}" | grep "${user}" &> /dev/null || \
+		sudo sh -c "echo -c 'd /tmp/${user}-cache 0755 ${user} ${user} - -' >> '${file}'"
