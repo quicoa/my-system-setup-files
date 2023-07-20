@@ -4,6 +4,7 @@ ca-certificates
 coreutils
 fdisk
 grep
+grub
 gzip
 hostname
 ifupdown
