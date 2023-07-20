@@ -25,4 +25,4 @@ sudo apt install --install-recommends --yes ${packages} $@
 file=${this}/config/apt-remove
 packages=`tr '\n' ' ' < "${file}"`
 
-[ "${packages}" != "" ] && sudo apt remove --yes ${packages}
+test "${packages}" != "" && sudo apt remove --yes ${packages}
