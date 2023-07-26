@@ -26,3 +26,6 @@ file=${this}/config/apt-remove
 packages=`tr '\n' ' ' < "${file}"`
 
 test "${packages}" != "" && sudo apt remove --yes ${packages}
+
+# Perform an autoremove
+sudo apt autoremove --yes
