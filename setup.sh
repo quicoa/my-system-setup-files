@@ -24,7 +24,7 @@ sudo locale-gen
 
 # Add new user
 cat /etc/passwd | grep "^${user}:" &> /dev/null || \
-	sudo adduser --disabled-password ${user}
+	sudo adduser --disabled-password --gecos "" ${user}
 
 # Set passwords
 echo -e "root:${passwd}\n" | sudo chpasswd
