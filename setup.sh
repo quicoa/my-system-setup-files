@@ -27,8 +27,8 @@ cat /etc/passwd | grep "^${user}:" &> /dev/null || \
 	sudo adduser --disabled-password --gecos "" ${user}
 
 # Set passwords
-echo -e "root:${passwd}\n" | sudo chpasswd
-echo -e "${user}:${passwd}\n" | sudo chpasswd
+echo "root:${passwd}" | sudo chpasswd
+echo "${user}:${passwd}" | sudo chpasswd
 
 # Add user to some user groups
 for i in adm audio bluetooth cdrom dialout dip fax floppy fuse lpadmin netdev \
