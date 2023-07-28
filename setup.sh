@@ -47,3 +47,6 @@ sudo mkdir --parents "${dir}"
 test -f "${file}" && \
 	cat "${file}" | grep "${user}" &> /dev/null || \
 		sudo sh -c "echo -c 'd /tmp/${user}-cache 0755 ${user} ${user} - -' >> '${file}'"
+
+# Remove symbolic links to old kernels
+sudo rm /initrd.img.old /vmlinuz.old || true
