@@ -12,6 +12,10 @@ config=`cat "${file}"`
 user=`echo "${config}" | grep --ignore-case 'user' | awk '{print $2}'`
 passwd=`echo "${config}" | grep --ignore-case 'password' | awk '{print $2}'`
 
+# Enable other package sources
+sed -i -E 's/^deb (.*) (.*) .*/deb \1 \2 main contrib non-free non-free-firmware/g' \
+	/etc/apt/sources.list
+
 # Install packages
 ${this}/apt.sh
 
