@@ -21,9 +21,13 @@ sudo systemctl mask ubuntu-system-adjustments.service
 
 # Disable Ubuntu Advantage (or Ubuntu Pro) crap as it has no added value to our
 # system (disabling may fail on pure Debian systems, but that's okay).
+sudo systemctl disable apt-news.service
+sudo systemctl mask apt-news.service
 sudo systemctl disable ua-reboot-cmds.service
 sudo systemctl mask ua-reboot-cmds.service
 sudo systemctl disable ua-timer.timer
 sudo systemctl mask ua-timer.timer
 sudo systemctl disable ubuntu-advantage.service
 sudo systemctl mask ubuntu-advantage.service
+sudo systemctl disable ubuntu-fan.service
+sudo systemctl mask ubuntu-fan.service
