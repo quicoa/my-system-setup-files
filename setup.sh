@@ -50,3 +50,7 @@ test -f "${file}" && \
 
 # Remove symbolic links to old kernels
 sudo rm /initrd.img.old /vmlinuz.old || true
+
+# Remove any existing initial ramdisks and create a fresh one
+sudo update-initramfs -d -k all
+sudo update-initramfs -c -k all
