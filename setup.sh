@@ -16,6 +16,9 @@ passwd=`echo "${config}" | grep --ignore-case 'password' | awk '{print $2}'`
 sed -i -E 's/^deb (.*) (.*) .*/deb \1 \2 main contrib non-free non-free-firmware/g' \
 	/etc/apt/sources.list
 
+# Install sudo
+apt install sudo
+
 # Install packages
 ${this}/apt.sh
 

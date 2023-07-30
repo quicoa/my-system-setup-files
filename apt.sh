@@ -8,9 +8,6 @@ this=`dirname $0`
 file=${this}/config/apt-install
 packages=`tr '\n' ' ' < "${file}"`
 
-# Install sudo
-apt install sudo
-
 # Add support for 32-bit packages
 sudo dpkg --add-architecture i386
 
