@@ -22,9 +22,6 @@ apt install sudo
 # Install packages
 ${this}/apt.sh
 
-# Clean apt packages
-sudo apt clean
-
 # Generate locales
 sudo sed -i -E 's/^# (en_US.UTF-8 UTF-8)$/\1/g' /etc/locale.gen
 sudo locale-gen

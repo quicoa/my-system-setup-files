@@ -26,3 +26,6 @@ test "${packages}" != "" && sudo apt remove --yes ${packages}
 
 # Perform an autoremove
 sudo apt autoremove --yes
+
+# Clean apt packages
+sudo apt clean
