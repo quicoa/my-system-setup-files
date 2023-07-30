@@ -13,6 +13,8 @@ less
 linux-image
 locales
 mount
+network-manager
+net-tools
 passwd
 sed
 sudo
