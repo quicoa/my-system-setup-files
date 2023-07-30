@@ -10,7 +10,7 @@ hostname
 ifupdown
 init
 less
-linux-image
+linux-image-generic
 locales
 mount
 network-manager
