@@ -20,5 +20,8 @@ sudo rsync --archive --no-D --acls --hard-links --xattrs ${from} ${to} \
 	--exclude dev --exclude media --exclude mnt --exclude proc --exclude run \
 	--exclude sys --exclude tmp $@
 
+# Create missing directories
+sudo mkdir ${to}/{dev,proc,sys,tmp,run,mnt,media}
+
 # Now make changes to the system in chroot
 ${this}/chroot.sh
