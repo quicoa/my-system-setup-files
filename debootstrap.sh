@@ -20,5 +20,8 @@ ${this}/mount.sh
 sudo debootstrap --merged-usr --keep-debootstrap-dir $@ \
 	"${suite}" "${target}" "${mirror}"
 
+# Create /var/tmp which is sometimes missing
+sudo mkdir --parents ${target}/var/tmp
+
 # Now make changes to the system in chroot
 ${this}/chroot.sh setup
