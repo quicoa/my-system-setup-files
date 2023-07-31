@@ -10,7 +10,7 @@ config=`cat "${file}"`
 
 # Read config parameters
 from=`echo "${config}" | grep --ignore-case 'source' | awk '{print $2}'`
-to=`echo "${config}" | grep --ignore-case 'directory' | awk '{print $2}'`
+to=`echo "${config}" | grep --ignore-case 'target' | awk '{print $2}'`
 
 # Make sure target filesystem is mounted
 ${this}/mount.sh
