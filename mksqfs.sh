@@ -15,5 +15,12 @@ target=`echo "${config}" | grep --ignore-case 'target' | awk '{print $2}'`
 # Make sure target filesystem is mounted
 ${this}/mount.sh
 
+# Unmount runtime directories
+for i in dev/pts dev/shm dev proc run sys tmp; do
+	target="${directory}/$i"
+
+	sudo umount "${target}" || true
+done
+
 # Now compress everything into a squashfs file
 sudo mksquashfs ${directory} ${target}
