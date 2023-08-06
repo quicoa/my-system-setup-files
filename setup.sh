@@ -48,6 +48,9 @@ test -f "${file}" && \
 	cat "${file}" | grep "${user}" &> /dev/null || \
 		sudo sh -c "echo 'd /tmp/${user}-cache 0755 ${user} ${user} - -' >> '${file}'"
 
+# Update alternatives interactively to further customize the system
+sudo update-alternatives --all
+
 # Remove symbolic links to old kernels
 sudo rm /initrd.img.old /vmlinuz.old || true
 
