@@ -19,6 +19,10 @@ test "${script}" || sh -c 'echo "Please provide a script name to run" && false'
 sudo mkdir --parents "${target}/scripts"
 sudo cp --preserve=mode --recursive ${this}/* "${target}/scripts/"
 
+# Store the used Git reference of this repository on the target filesystem
+git status && \
+	git rev-parse HEAD > "${target}/scripts/ref" || true
+
 # Make sure system runtime directories exist
 sudo mkdir --parents ${target}/{dev,proc,run,sys,tmp}
 
