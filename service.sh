@@ -31,3 +31,9 @@ sudo systemctl disable ubuntu-advantage.service
 sudo systemctl mask ubuntu-advantage.service
 sudo systemctl disable ubuntu-fan.service
 sudo systemctl mask ubuntu-fan.service
+
+# Disable brltty services as it sometimes messes with Arduino devices.
+sudo systemctl disable brltty.service
+sudo systemctl mask brltty.service
+sudo systemctl disable brltty-udev.service
+sudo systemctl mask brltty-udev.service
