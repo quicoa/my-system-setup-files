@@ -18,7 +18,9 @@ echo -e "Make sure the 'live-boot' APT package is installed on the target " \
 mkdir --parents /tmp/livecd/{isolinux,live}
 
 # Compress the target filesystem into a squashfs
-sudo mksquashfs ${directory} /tmp/livecd/live/filesystem.squashfs -noappend
+fs=/tmp/livecd/live/filesystem.squashfs
+test -f ${fs} && echo -e "${fs} already exists, not recreating\n" ||
+	sudo mksquashfs ${directory} ${fs} -noappend
 
 # Prepare ISO files
 cp ${directory}/boot/vmlinuz-* /tmp/livecd/live/vmlinuz
