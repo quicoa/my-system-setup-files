@@ -29,6 +29,11 @@ sudo locale-gen
 # Set system locale
 sudo localectl set-locale LANG=en_US.UTF-8
 
+# Set time & date settings
+sudo timedatectl set-ntp true
+sudo timedatectl set-timezone Europe/Amsterdam
+sudo timedatectl set-local-rtc 0
+
 # Add new user
 cat /etc/passwd | grep "^${user}:" &> /dev/null || \
 	sudo adduser --disabled-password --gecos "" ${user}
