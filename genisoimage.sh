@@ -42,4 +42,4 @@ LABEL linux
 " > /tmp/livecd/isolinux/isolinux.cfg
 
 # Create the ISO file
-genisoimage -r -f -input-charset iso8859-1 -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -o linux.iso /tmp/livecd
+genisoimage -r -f -input-charset iso8859-1 -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o linux.iso /tmp/livecd
