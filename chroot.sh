@@ -21,7 +21,7 @@ sudo cp --preserve=mode --recursive ${this}/* "${target}/scripts/"
 
 # Store the used Git reference of this repository on the target filesystem
 git status && \
-	git rev-parse HEAD > "${target}/scripts/ref" || true
+	git rev-parse HEAD | sudo tee "${target}/scripts/ref" &> /dev/null || true
 
 # Make sure system runtime directories exist
 sudo mkdir --parents ${target}/{dev,proc,run,sys,tmp}
