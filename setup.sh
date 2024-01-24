@@ -17,7 +17,7 @@ sed -i -E 's/^deb ([a-z\:\.\/]+) (\w+) .*$/deb \1 \2 main contrib non-free non-f
 	/etc/apt/sources.list
 
 # Install sudo
-apt install sudo
+apt install sudo --yes
 
 # Install packages
 ${this}/apt.sh
