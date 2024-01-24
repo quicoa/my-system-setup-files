@@ -21,4 +21,4 @@ sudo rsync --archive --no-D --acls --hard-links --xattrs ${from}/ ${to}/ \
 	--exclude sys --exclude tmp $@
 
 # Create missing directories
-sudo mkdir ${to}/{dev,proc,sys,tmp,run,mnt,media}
+sudo mkdir -p ${to}/{dev,proc,sys,tmp,run,mnt,media} ${to}/var/tmp
