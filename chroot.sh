@@ -34,5 +34,8 @@ for i in dev dev/pts dev/shm proc run sys tmp; do
 		sudo mount --bind /$i --target "${directory}"
 done
 
+# Copy resolv.conf to the new filesystem
+sudo cp --force /etc/resolv.conf "${target}/etc/resolv.conf"
+
 # Change system root and execute the setup
 sudo chroot "${target}" "/scripts/${script}.sh" $@
