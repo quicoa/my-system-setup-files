@@ -64,4 +64,4 @@ sudo update-initramfs -d -k all
 sudo update-initramfs -c -k all
 
 # Remove temporary files
-sudo rm -rf /tmp/* /var/tmp/*
+sudo rm -rf /var/tmp/*
