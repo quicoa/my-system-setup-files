@@ -17,9 +17,9 @@ ${this}/mount.sh
 
 # Unmount runtime directories
 for i in dev/pts dev/shm dev proc run sys tmp; do
-	target="${directory}/$i"
+	a="${directory}/$i"
 
-	sudo umount "${target}" || true
+	sudo umount "$a" || true
 done
 
 # Now compress everything into a squashfs file
