@@ -16,7 +16,7 @@ sudo systemctl disable tuned.service
 
 # Disable and mask Ubuntu system adjustments as these mess with grub.cfg and
 # thus makes it hard to made your own Grub modifications.
-sudo systemctl disale ubuntu-system-adjustments.service
+sudo systemctl disable ubuntu-system-adjustments.service
 sudo systemctl mask ubuntu-system-adjustments.service
 
 # Disable Ubuntu Advantage (or Ubuntu Pro) crap as it has no added value to our
