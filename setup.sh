@@ -26,9 +26,6 @@ ${this}/apt.sh
 sudo sed -i -E 's/^# (en_US.UTF-8 UTF-8)$/\1/g' /etc/locale.gen
 sudo locale-gen
 
-# Set system locale
-sudo localectl set-locale LANG=en_US.UTF-8
-
 # Set time & date settings
 sudo timedatectl set-ntp true
 sudo timedatectl set-timezone Europe/Amsterdam
