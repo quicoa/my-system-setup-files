@@ -22,7 +22,7 @@ sudo apt install --install-recommends --yes ${packages} $@
 file=${this}/config/apt-remove
 packages=`tr '\n' ' ' < "${file}"`
 
-test "${packages}" != "" && sudo apt remove --yes ${packages}
+test "${packages}" != "" && sudo apt remove --yes ${packages} || true
 
 # Perform an autoremove
 sudo apt autoremove --yes
